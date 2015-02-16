@@ -7,13 +7,6 @@ class GcmApp
     puts response
   end
 
-  def getRegistrationID()
-    
-  end
-
-  def storeRegistrationID()
-    
-  end
 end
 
 api_key = 'AIzaSyCUe0G5x8mPeyZEFbvPxxw4i7QebM0uS9M'
