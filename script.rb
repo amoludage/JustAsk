@@ -1,12 +1,10 @@
 require 'gcm'
-require 'api_key'
+require './api_key'
 
 class GcmApp
-  def sendMessage(options)#(api_key, registration_ids, options)
-    api = Apikey.new
-    #gcm = initialize_pro()
-    gcm = GCM.new(@api_key)
-    response = gcm.send(registration_ids, options)
+  def sendMessage(api_key, registration_ids, options)
+    gcm = GCM.new(api_key)
+    response = gcm.send(registration_ids,options)
     puts response
   end
 
@@ -15,5 +13,9 @@ end
 options = {data: {score: "123"}, collapse_key: "updates_available"}
 
 app = GcmApp.new
-app.sendMessage(options)
-#app.sendMessage#(api_key, registration_ids, options)
+api = Apikey.new
+p api
+registration_ids = api.registration_ids
+api_key = api.api_key
+#app.sendMessage(options)
+app.sendMessage(api_key, registration_ids, options)
