@@ -1,6 +1,6 @@
 class RegistersController < ApplicationController
   def index
-    @register = Register.all
+    HardWorker.perform_async('bob', 5)
   end
 
   def new
