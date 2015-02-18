@@ -1,6 +1,8 @@
 class Register
   include Mongoid::Document
-  field :name, type: String
+  field :phone_number, type: String
+  field :device_number, type: String
+  field :os_type, type: String
   field :registration_id, type: String
 
   #validates :device.number, presence:true
