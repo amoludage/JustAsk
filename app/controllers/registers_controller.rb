@@ -10,7 +10,7 @@ class RegistersController < ApplicationController
     #register = Register.new(JSON.parse(data))#params[:id])
     #register = data && data.length >= 2 ? JSON.parse(data) : nil
     #p data
-    register =  Register.find(params[:registration_id])
+   # register =  Register.find(params[:registration_id])
     #respond_to |format|
     #if register.save
      # render '{success: true}'
