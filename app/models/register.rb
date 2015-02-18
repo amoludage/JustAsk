@@ -1,7 +1,7 @@
 class Register
   include Mongoid::Document
   field :phone_number, type: String
-  field :device_number, type: String
+#  field :device_number, type: String
   field :os_type, type: String
   field :registration_id, type: String
 
