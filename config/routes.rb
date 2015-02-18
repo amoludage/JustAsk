@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  root 'registers#new'
+  root 'registers#create'
   resources :registers
 
   # Example resource route with options:
