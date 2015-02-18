@@ -10,29 +10,17 @@ class RegistersController < ApplicationController
     #register = Register.new(JSON.parse(data))#params[:id])
     #register = data && data.length >= 2 ? JSON.parse(data) : nil
     #p data
-   # register =  Register.find(params[:registration_id])
-    #respond_to |format|
-    #if register.save
-     # render '{success: true}'
-      #reg_id = register['registration_id']
-      #phone_number = register['phone_number']
-      #os_type = register['os_type']
-      #device_number = register['device_number']
-
-       # render {sucess: true}
-      #else
-      #  render {error: register.errors.full_messages}
-      #end
-      #Register.create!(registration_id: reg_id, phone_number: phone_number, os_type: os_type, device_number: device_number)
-    #p @register
-   #   api_key =  'AIzaSyCUe0G5x8mPeyZEFbvPxxw4i7QebM0uS9M'
-  #    gcm = GCM.new(api_key)
-   #   options = {data: {score: '123'}}
-    #  res = gcm.send_notification(register[:registration_id], options)
-     # puts res
-   # else
-      render :success => "register.errors.full_messages"
-   # end
+    register =  Register.create(params[:register])
+    if register.save
+      render :success => true
+      api_key =  'AIzaSyCUe0G5x8mPeyZEFbvPxxw4i7QebM0uS9M'
+      gcm = GCM.new(api_key)
+      options = {data: {score: '123'}}
+      res = gcm.send_notification(register[:registration_id], options)
+      puts res
+   else
+      render :success => 'register.errors.full_messages'
+   end
   end
 
   def create
