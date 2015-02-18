@@ -10,7 +10,7 @@ class RegistersController < ApplicationController
     #register = Register.new(JSON.parse(data))#params[:id])
     #register = data && data.length >= 2 ? JSON.parse(data) : nil
     #p data
-    register =  Register.create(params[:register])
+    register =  Register.create(params[:registration_id])
     if register.save
       render :success => true
       api_key =  'AIzaSyCUe0G5x8mPeyZEFbvPxxw4i7QebM0uS9M'

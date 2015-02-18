@@ -1,5 +1,5 @@
 require File.expand_path('../boot', __FILE__)
-
+require 'mongoid'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -22,6 +22,7 @@ module JustAsk
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    Mongoid.load!(File.expand_path('mongoid.yml', './config'))
     #config.active_job.queue_adapter = :sidekiq
   end
 end
