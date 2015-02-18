@@ -4,7 +4,7 @@ require './api_key'
 class GcmApp
   def sendMessage(api_key, registration_ids, options)
     gcm = GCM.new(api_key)
-    response = gcm.send(registration_ids,options)
+    response = gcm.send_notification(registration_ids,options)
     puts response
   end
 
