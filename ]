@@ -1,0 +1,15 @@
+class User
+  include Mongoid::Document
+  field :user_name, type: String
+  field :email, type: String
+  field :password, type: String
+  field :phone_number, type: String
+  field :device_number, type: String
+  field :registration_id, type: String
+  field :created_at, type: Mongoid::Metastamp::Time
+  field :gender, type: String
+  field :age, type: Integer
+
+  has_many :messages
+  has_many :responses
+end
